@@ -1,5 +1,23 @@
 function minDate(dates) {
   //write you code here
+	function minDate(dates) {
+  // Convert each string to Date object and find the minimum
+  let min = new Date(dates[0]);
+
+  for (let i = 1; i < dates.length; i++) {
+    let current = new Date(dates[i]);
+    if (current < min) {
+      min = current;
+    }
+  }
+
+  // Format it back to "YYYY/MM/DD"
+  let year = min.getFullYear();
+  let month = String(min.getMonth() + 1).padStart(2, '0');
+  let day = String(min.getDate()).padStart(2, '0');
+  return `${year}/${month}/${day}`;
+}
+
 }
 
 // Do not change the code
